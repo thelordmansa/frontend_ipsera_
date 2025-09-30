@@ -81,3 +81,18 @@ function BackgroundFX() {
     </>
   );
 }
+
+import "./globals.css";
+import type { ReactNode } from "react";
+import GalaxyBackground from "./components/GalaxyBackground";
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="antialiased bg-[#0B0B0C] text-white">
+        <GalaxyBackground />
+        {children}
+      </body>
+    </html>
+  );
+}
