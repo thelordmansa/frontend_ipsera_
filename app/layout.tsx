@@ -1,19 +1,21 @@
 // app/layout.tsx
 import "./globals.css";
 import type { ReactNode } from "react";
+import GalaxyBackground from "./components/GalaxyBackground";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="antialiased bg-[#0B0B0C] text-white">
-        <BackgroundFX />
+        {/* Galaxy animated background (fixed, non interactif) */}
+        <GalaxyBackground />
 
+        {/* NAVBAR */}
         <header className="sticky top-0 z-40 border-b border-neutral-900/70 backdrop-blur supports-[backdrop-filter]:bg-black/40">
           <nav className="container flex h-14 items-center justify-between">
             {/* Left: Logo / Brand */}
             <div className="flex items-center gap-2">
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10">
-                {/* simple seahorse-like glyph */}
                 <span className="text-xs">S</span>
               </span>
               <span className="font-semibold tracking-tight">Ipsera</span>
@@ -35,8 +37,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </nav>
         </header>
 
-        <main className="relative">{children}</main>
+        {/* PAGE CONTENT */}
+        <main className="relative">
+          {children}
+        </main>
 
+        {/* FOOTER */}
         <footer className="border-t border-neutral-900/70 mt-24">
           <div className="container py-10 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
             <div>© 2025 Ipsera. All rights reserved.</div>
@@ -47,51 +53,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </ul>
           </div>
         </footer>
-      </body>
-    </html>
-  );
-}
-
-/* --- Background FX: soft orbs + subtle particles (Saasfly-like, discret) --- */
-function BackgroundFX() {
-  return (
-    <>
-      {/* radial orbs */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[radial-gradient(closest-side,_rgba(52,120,246,0.15),_transparent_70%)] blur-2xl" />
-        <div className="absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(closest-side,_rgba(111,71,255,0.12),_transparent_70%)] blur-2xl" />
-      </div>
-
-      {/* tiny particles / confetti lines */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        {Array.from({ length: 24 }).map((_, i) => (
-          <span
-            // eslint-disable-next-line react/no-array-index-key
-            key={i}
-            className="absolute block h-px w-10 rotate-[20deg] bg-white/5"
-            style={{
-              left: `${(i * 37) % 100}%`,
-              top: `${(i * 53) % 100}%`,
-              opacity: 0.35,
-              transform: `rotate(${(i * 17) % 60}deg)`,
-            }}
-          />
-        ))}
-      </div>
-    </>
-  );
-}
-
-import "./globals.css";
-import type { ReactNode } from "react";
-import GalaxyBackground from "./components/GalaxyBackground";
-
-export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <body className="antialiased bg-[#0B0B0C] text-white">
-        <GalaxyBackground />
-        {children}
       </body>
     </html>
   );
