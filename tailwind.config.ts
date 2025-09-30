@@ -17,3 +17,9 @@ const config: Config = {
 };
 
 export default config;
+
+module.exports = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: { extend: {} },
+  plugins: [],
+};
