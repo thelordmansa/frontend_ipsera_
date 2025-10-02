@@ -1,0 +1,13 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/api/ipsera/titles/route": "app/api/ipsera/titles/route.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/status/page": "app/status/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/app/page": "app/app/page.js",
+  "/app/thumbnails/page": "app/app/thumbnails/page.js",
+  "/app/descriptions/page": "app/app/descriptions/page.js",
+  "/app/scripts/page": "app/app/scripts/page.js",
+  "/app/titles/page": "app/app/titles/page.js"
+}
