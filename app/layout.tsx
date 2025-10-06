@@ -31,8 +31,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             {/* Right: Actions */}
             <div className="flex items-center gap-3">
-              <a href="/login" className="btn btn-ghost hidden md:inline-flex">Login</a>
-              <a href="/signup" className="btn btn-primary">Sign up</a>
+              <a href="/auth" className="btn btn-ghost hidden md:inline-flex">Sign in</a>
+              <a href="/auth" className="btn btn-primary">Sign up</a>
             </div>
           </nav>
         </header>
