@@ -7,10 +7,10 @@ type Item = { href: string; label: string; note: "requires auth" | "public" };
 
 export default function AppHub() {
   const items: Item[] = [
-    { href: "/app/titles", label: "Titles", note: "requires auth" },
+    { href: "/app/titles",       label: "Titles",       note: "requires auth" },
     { href: "/app/descriptions", label: "Descriptions", note: "requires auth" },
-    { href: "/app/scripts", label: "Scripts", note: "requires auth" },
-    { href: "/app/thumbnails", label: "Thumbnails", note: "public" },
+    { href: "/app/scripts",      label: "Scripts",      note: "requires auth" },
+    { href: "/app/thumbnails",   label: "Thumbnails",   note: "public" },
   ];
 
   return (
