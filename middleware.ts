@@ -1,10 +1,23 @@
 // middleware.ts
 import { NextResponse, type NextRequest } from "next/server";
 
-// Ne protège que /app/* (le reste reste inchangé)
-export const config = { matcher: ["/app/:path*"] };
+export const config = {
+  matcher: ["/app/:path*", "/auth/:path*", "/auth", "/signup", "/login"],
+};
 
-// BYPASS TOTAL QA: aucune auth sur /app/*
-export async function middleware(_req: NextRequest) {
+export async function middleware(req: NextRequest) {
+  const { pathname } = new URL(req.url);
+
+  // Redirige tout ce qui est auth vers /app (bypass QA)
+  if (
+    pathname === "/auth" ||
+    pathname.startsWith("/auth/") ||
+    pathname === "/signup" ||
+    pathname === "/login"
+  ) {
+    return NextResponse.redirect(new URL("/app", req.url));
+  }
+
+  // Bypass total pour /app/*
   return NextResponse.next();
 }
