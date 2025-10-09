@@ -1,9 +1,4 @@
-export default function ScriptsPage() {
-  return (
-    <div>
-      <h2 className="text-xl font-bold mb-2">Scripts</h2>
-      <p className="text-sm">This page will allow you to generate engaging video scripts.</p>
-      <p className="mt-4 text-sm italic">Coming soon…</p>
-    </div>
-  );
+"use client";
+export default function ScriptsPage(){
+  return(<main className="p-6"><h1 className="text-lg font-semibold">Scripts</h1><p className="text-sm text-gray-500">QA: page publique.</p></main>);
 }
